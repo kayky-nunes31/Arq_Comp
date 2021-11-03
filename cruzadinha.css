@@ -1,0 +1,179 @@
+.container {
+    background-color: black;
+    width: 100%;
+    height: 640px;
+    margin: 0;
+    padding: 0;
+}
+
+.filha {
+    background-color: red;
+    width: 1200px;
+    height: 640px;
+    margin-left: 75px;
+}
+
+.cpu {
+    background-color: blue;
+    width: 100px;
+    height: 40px;
+    margin-left: 540px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    width: 25px;
+    height: 25px;
+}
+
+.ula {
+    background-color: blueviolet;
+    width: 70px;
+    height: 40px;
+    margin-left: 555px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ram {
+    background-color: chartreuse;
+    width: 100px;
+    height: 40px;
+    margin-left: 540px;
+    align-items: center;
+    display: flex;
+    justify-content: center;    
+}
+
+.rom {
+    background-color: royalblue;
+    width: 70px;
+    height: 40px;
+    margin-left: 555px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eprom {
+    background-color: blanchedalmond;
+    width: 100px;
+    height: 40px;
+    margin-left: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.memoria_massa {
+    background-color: cyan;
+    width: 470px;
+    height: 40px;
+    margin-left: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.i5 {
+    background-color: darkorchid;
+    width: 40px;
+    height: 40px;
+    margin-left: 570px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dma {
+    background-color: magenta;
+    width: 70px;
+    height: 40px;
+    margin-left: 555px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dual_core {
+    background-color: springgreen;
+    width: 270px;
+    height: 40px;
+    margin-left: 455px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quad_core {
+    background-color: yellow;
+    width: 240px;
+    height: 40px;
+    margin-left: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.adress_bus {
+    background-color: chocolate;
+    width: 240px;
+    height: 40px;
+    margin-left: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cs {
+    background-color: indigo;
+    width: 40px;
+    height: 40px;
+    margin-left: 570px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.data_bus {
+    background-color: khaki;
+    width: 210px;
+    height: 40px;
+    margin-left: 485px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flash {
+    background-color: royalblue;
+    width: 140px;
+    height: 40px;
+    margin-left: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registradores {
+    background-color: royalblue;
+    width: 400px;
+    height: 40px;
+    margin-left: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.i7 {
+    background-color: darkgoldenrod;
+    width: 40px;
+    height: 40px;
+    margin-left: 570px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
