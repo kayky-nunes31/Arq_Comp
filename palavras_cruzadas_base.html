@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel = "icon"  type = "image / png  " size = "32x32"  href = "./favicon-32x32.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+    <title>Gu Costa, Wesley e João Pedro Crossword</title>
+
+</head>
+<body>
+
+    <style>
+        *{
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;            
+        }
+
+        body{
+            background-image: linear-gradient(to bottom right, white, #eee);
+        }
+
+        h1{
+            width: 60%;
+            color: #080808;
+            text-align: center;
+            margin-top: 45px;
+            margin-left: 45px;
+            font-size: 40px;
+            float: left;
+        }
+
+        .cruzadinha{
+            width: 45%;
+            display: grid;
+            grid-template-columns: repeat(16, 35px);
+            margin-left: 30px;
+            margin-top: -10px;
+            color: green;
+            font-size: 28px;
+            text-align: center;
+            float: left;
+        }
+        
+        .bloco-util{
+            border: solid 1px #999;
+            background-color: white;  
+        }
+
+        .bloco-off{
+            background-color: #999;
+            font-size: 20px;
+            padding-top: 3px;
+        }
+
+        .bloco-fake{
+            background-color: #999;
+            color: #999;
+        }
+
+        .bloco-espaco{
+            border: solid 1px #777;
+            background-color: #777;
+            color: #777;
+        }
+        #box-perguntas{
+            margin-bottom: 30px;
+            margin-left: -15px;
+            margin-top: 60px;
+            margin-right: 30px;
+            width: 48%;
+            float: right;
+            background-image: linear-gradient(to bottom right, blue, #eee);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 20px 20px 20px #999;
+        }
+
+        li{
+            list-style-type: decimal
+        }
+
+        input{
+            border: solid 1px black;
+            border-radius: 7px;
+            height: 17px;
+            box-shadow: 1.5px 1.5px 2px blue;
+        }
+
+        button{
+            background-color: black;
+            text-transform: uppercase;
+            color: white;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            font-weight: bolder;
+            height: 25px;
+            border: 0; 
+            box-shadow: 3px 3px 4px #777;
+            border-radius: 10px;
+        }
+
+        button:hover{
+            background-color: #000080;
+            transform: scale(1.05)
+        }
+
+        button:active{
+            background-color: #e0e0e0;
+            
+        }
+
+        sup{
+            text-align:  left;
+            font-size: 11px;
+            font-weight: bolder;
+            margin-left: -15px;
+            color: black;
+
+        }
+
+        #supDiferente{
+            margin-left: 0px;
+        }
+
+        img{
+            width: 14%;
+            margin-top: 20px;
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 0px;
+            color: black;
+        }
+
+        .fixoLeft{
+            width: 50%;
+            position: fixed;
+            margin-top: 8px;
+        }
+
+        .buttons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .buttons button{
+
+            background-color: #000080;
+            height: 35px;
+            margin-right: 15px;
+            border-radius: 20px;
+
+        }
+
+        .buttons button:hover{
+            background-color: rgb(50, 11, 87);
+        }
+
+        .buttons button:active{
+            background-color: #e0e0e0;
+        }
+
+        .gabarito{
+            color:orange;
+        }
+
+        .creditos{
+            text-align: center;
+            margin-right: 10px;
+            color: #000080;
+        }
+
+        #pontos{
+            width: 20%;
+            padding-top: 6px;
+            padding-bottom: 4px;
+            padding-left: 1px;
+            padding-right: 2px;
+            background-color: white;
+            text-align: center;
+            border: solid 2px #2568EF;
+            border-radius: 15px;
+            font-weight: bold;
+            color: #2568EF;
+            box-shadow: 2px 2px 2px #777;
+        }
+
+       
+
+    </style>
+
+    <div class="fixoLeft">
+
+        <h1>Cruzadinha by Gustavo Costa,  Wesley Monteiro e João Pedro</h1> 
+
+        <br> <br>
+
+
+        <div class="cruzadinha" id="cruzadinha">
+
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="qQuad"><sup>16</sup></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="dDual"><sup id="supDiferente">12/15</sup></div>
+            <div class="bloco-util" id="uDual"></div>
+            <div class="bloco-util" id="aDual"></div>
+            <div class="bloco-util" id="lDual"></div>
+            <div class="bloco-util" id="tracoDual">-</div>
+            <div class="bloco-util" id="cDual"><sup>1</sup></div>
+            <div class="bloco-util" id="oDual"></div>
+            <div class="bloco-util" id="rDual"><sup>4</sup></div>
+            <div class="bloco-util" id="eDual"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-fake">.</div>
+            <div class="bloco-util" id="uULA"><sup>2</sup></div>
+            <div class="bloco-util" id="lULA"></div>
+            <div class="bloco-util" id="aULA"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="aData"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="pCPU" ></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="aRAM"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-fake">.</div>
+            <div class="bloco-util" id="aQuad"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="tData"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="uCPU"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="mRAM"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-fake">.</div>
+            <div class="bloco-util" id="dQuad"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="dDMA"><sup>9</sup></div>
+            <div class="bloco-util" id="mDMA"></div>
+            <div class="bloco-util" id="aDMA"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="aAdress"><sup>11</sup></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="tracoQuad">-</div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-espaco" id="espacoData"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="dAdress"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-fake">.</div>
+            <div class="bloco-util" id="cQuad"><sup>10</sup></div>
+            <div class="bloco-util" id="sCS"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="bData"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="fFlash"><sup>7</sup></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="rAdress"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-fake">.</div>
+            <div class="bloco-util" id="oQuad"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="uData"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="lFlash"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="eAdress"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="rQuad"><sup>3</sup></div>
+            <div class="bloco-util" id="eRegistradores"></div>
+            <div class="bloco-util" id="gRegistradores"></div>
+            <div class="bloco-util" id="iRegistradores"><sup>13</sup></div>
+            <div class="bloco-util" id="sRegistradores"></div>
+            <div class="bloco-util" id="tRegistradores"></div>
+            <div class="bloco-util" id="rRegistradores"></div>
+            <div class="bloco-util" id="aRegistradores"></div>
+            <div class="bloco-util" id="dRegistradores"></div>
+            <div class="bloco-util" id="oRegistradores"></div>
+            <div class="bloco-util" id="r2Registradores"></div>
+            <div class="bloco-util" id="e2Registradores"></div>
+            <div class="bloco-util" id="s2Registradores"></div>
+            <div class="bloco-fake">.</div>
+            <div class="bloco-off"></div>
+            <div class="bloco-fake">.</div>
+            <div class="bloco-util" id="eQuad"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="i5"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="sFlash"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="sAdress"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-fake">.</div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="hFlash"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-espaco" id="espacoAdress"> </div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="eEPROM"><sup>6</sup></div>
+            <div class="bloco-util" id="pEPROM"></div>
+            <div class="bloco-util" id="rEPROM"><sup>5</sup></div>
+            <div class="bloco-util" id="oEPROM"></div>
+            <div class="bloco-util" id="mEPROM"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="bAdress"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-fake">.</div>
+            <div class="bloco-fake">.</div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="oROM"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div> 
+            <div class="bloco-util" id="uAdress"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="mMASSA"><sup>8</sup></div>
+            <div class="bloco-util" id="eMASSA"></div>
+            <div class="bloco-util" id="m2MASSA"></div>
+            <div class="bloco-util" id="oMASSA"></div>
+            <div class="bloco-util" id="rMASSA"></div>
+            <div class="bloco-util" id="iMASSA"><sup>14</sup></div>
+            <div class="bloco-util" id="aMASSA"></div>
+            <div class="bloco-espaco" id="espacoMASSA">.</div>
+            <div class="bloco-util" id="dMASSA"></div>
+            <div class="bloco-util" id="e2MASSA"></div>
+            <div class="bloco-espaco" id="espaco2MASSA">.</div>
+            <div class="bloco-util" id="m3MASSA"></div>
+            <div class="bloco-util" id="a2MASSA"></div>
+            <div class="bloco-util" id="s2Adress"></div>
+            <div class="bloco-util" id="sMASSA"></div>
+            <div class="bloco-util" id="a3MASSA"></div>
+            <div class="bloco-fake">.</div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-util" id="i7"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+            <div class="bloco-off"></div>
+
+        </div>
+   
+    </div>
+
+
+    <div id="box-perguntas">
+        
+        <h2>PERGUNTAS:</h2>
+        
+
+        <div id="pontos">
+            ACERTOS: 0/16
+        </div>
+
+        <br>
+        <!--Pergunta CPU-->
+
+        <li>
+            <label for="pergunta1"> É a parte de um sistema computacional, que realiza as instruções de um programa de computador, para executar a aritmética básica, lógica, e a entrada e saída de dados.</label>
+            <br> <br>
+            <input type="text" placeholder="3 letras..." maxlength="3" id="pergunta1">
+            <button id="buttonPergunta1" onclick="funcRespostas(pergunta1);">Conferir</button>
+        </li>
+
+        <br>
+        <!--PERGUNTA ULA-->
+
+        <li>
+            <label for="pergunta2"> É a unidade responsável pela realização das operações lógicas e aritméticas de um microprocessador.</label>
+            <br> <br>
+            <input type="text" placeholder="3 letras..." maxlength="3" id="pergunta2">
+            <button id="buttonPergunta2" onclick="funcRespostas(pergunta2);">Conferir</button>
+        </li>
+
+        <br>
+        <!--PERGUNTA REGISTRADORES-->
+
+        <li>
+            <label for="pergunta3">É uma memória local rápida do microprocessador, destinada ao armazenamento de dados e instruções.</label>
+            <br> <br>
+            <input type="text" placeholder="13 letras..." maxlength="13" id="pergunta3">
+            <button id="buttonPergunta3" onclick="funcRespostas(pergunta3);">Conferir</button>
+        </li>
+
+        <br>
+       <!--PERGUNTA RAM-->
+
+        <li>
+            <label for="pergunta4">É a memória volátil que armazena temporariamente os arquivos com os quais você está trabalhando.</label>
+            <br> <br>
+            <input type="text" placeholder="3 letras..." maxlength="3" id="pergunta4">
+            <button id="buttonPergunta4" onclick="funcRespostas(pergunta4);">Conferir</button>
+        </li>
+        
+        <br>
+        <!--PERGUNTA ROM-->
+
+        <li>
+            <label for="pergunta5">É uma memória não volátil que armazena permanentemente as instruções no seu computador.</label>
+            <br> <br>
+            <input type="text" placeholder="3 letras..." maxlength="3" id="pergunta5">
+            <button id="buttonPergunta5" onclick="funcRespostas(pergunta5);">Conferir</button>
+        </li>
+        
+        <br>
+        <!--PERGUNTA EPROM-->
+
+        <li>
+            <label for="pergunta6">É um tipo de chip de memória de computador que mantém seus dados quando a energia é desligada. </label>
+            <br> <br>
+            <input type="text" placeholder="5 letras..." maxlength="5" id="pergunta6">
+            <button id="buttonPergunta6" onclick="funcRespostas(pergunta6);">Conferir</button>
+        </li>
+
+        <br>
+        <!--PERGUNTA FLASH-->
+
+        <li>  
+            <label for="pergunta7">É um chip de memória de computador que mantém informações armazenadas sem a necessidade de uma fonte de energia.</label>
+            <br> <br>
+            <input type="text" placeholder="5 letras..." maxlength="5" id="pergunta7">
+            <button id="buttonPergunta7" onclick="funcRespostas(pergunta7);">Conferir</button>
+        </li>
+        
+        <br>
+        <!--PERGUNTA MEMORIA DE MASSA-->
+
+        <li>
+            <label for="pergunta8">Tem como função armazenar grandes quantidades de informações. (3 palavras...).</label>
+            <br> <br>
+            <input type="text" placeholder="7 letras, ,2 letras, ,5 letras..." maxlength="16" id="pergunta8">
+            <button id="buttonPergunta8" onclick="funcRespostas(pergunta8);">Conferir</button>
+        </li>
+
+        <br>
+        <!--PERGUNTA DMA-->
+
+        <li>
+            <label for="pergunta9">Sigla do recurso da placa mãe que capacita os periféricos a terem acesso direto à memória RAM, sem sobrecarregarem o processador. </label>
+            <br> <br>
+            <input type="text" placeholder="3 letras..." maxlength="3" id="pergunta9">
+            <button id="buttonPergunta9" onclick="funcRespostas(pergunta9);">Conferir</button>
+        </li>
+    
+        <br>
+        <!--PERGUNTA CS-->
+
+        <li>
+            <label for="pergunta10">Sigla da linha de controle usada para selecionar um dos circuitos integrados entre vários conectados ao mesmo barramento de computador.</label>
+            <br> <br>
+            <input type="text" placeholder="2 letras..." maxlength="2" id="pergunta10">
+            <button id="buttonPergunta10" onclick="funcRespostas(pergunta10);">Conferir</button>
+        </li>
+        
+        <br>
+        <!--PERGUNTA ADRESS BUS -->
+
+        <li>
+            <label for="pergunta11"> É a arquitetura de barramento que especifica o endereço de hardware da memória física (o endereço físico). (2 palavras...).</label>
+            <br> <br>
+            <input type="text" placeholder="6 letras, ,3 letras..." maxlength="10" id="pergunta11">
+            <button id="buttonPergunta11" onclick="funcRespostas(pergunta11);">Conferir</button>
+        </li>
+        
+        <br>
+        <!--PERGUNTA DATA BUS -->
+
+        <li>
+            <label for="pergunta12">É um sistema dentro de um computador ou dispositivo, consistindo em um conector ou conjunto de fios, que fornece transporte para os dados.</label>
+            <br> <br>
+            <input type="text" placeholder="4 letras, ,3 letras..." maxlength="8" id="pergunta12">
+            <button id="buttonPergunta12" onclick="funcRespostas(pergunta12);">Conferir</button>
+        </li>
+        
+        <br>
+        <!--PERGUNTA I5-->
+
+        <li>
+            <label for="pergunta13">Linha de processador da Intel que introduziu o Turbo Boost.</label>
+            <br> <br>
+            <input type="text" placeholder="2 letras..." maxlength="2" id="pergunta13">
+            <button id="buttonPergunta13" onclick="funcRespostas(pergunta13);">Conferir</button>
+        </li>
+    
+        <br>
+        <!--PERGUNTA I7-->
+
+        <li>
+            <label for="pergunta14">Linha de processador da Intel de alta performance indicada para multi-tarefas, programas,edições e jogos  pesados.</label>
+            <br> <br>
+            <input type="text" placeholder="2 letras..." maxlength="2" id="pergunta14">
+            <button id="buttonPergunta14" onclick="funcRespostas(pergunta14);">Conferir</button>
+        </li>
+        
+        <br>
+        <!--PERGUNTA DUAL-CORE-->
+  
+        <li>
+            <label for="pergunta15">Quando se trata de núcleos de processamento, o Intel Pentium Gold G6400 é considerado "____-____". (Palavra composta...).</label>
+            <br> <br>
+            <input type="text" placeholder="4 letras, - , 4 letras..." maxlength="9" id="pergunta15">
+            <button id="buttonPergunta15" onclick="funcRespostas(pergunta15);">Conferir</button>
+        </li>
+    
+        <br>
+        <!--PERGUNTA QUAD-CORE-->
+
+        <li> 
+            <label for="pergunta16">Quando se trata de núcleos de processamento, o Intel Core i3-10100 é considerado "____-____". (Palavra composta...).</label>
+            <br> <br>
+            <input type="text" placeholder="4 letras, - , 4 letras..." maxlength="9" id="pergunta16">
+            <button id="buttonPergunta16" onclick="funcRespostas(pergunta16);">Conferir</button> 
+        </li>
+
+        <br> <br>
+
+        <div class="buttons">
+    
+            <button onclick="funcGabarito()">GABARITO</button> 
+            
+            <button onclick="window.location.reload()">RECOMEÇAR</button>
+
+        </div>
+        
+        <br>
+        
+       
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    var acertos = 0;
+
+    const funcRespostas = (idPergunta) => {
+        var pergunta = idPergunta.value;
+
+        if (idPergunta == pergunta1) {
+            if (pergunta.toUpperCase() == "CPU") {
+
+                alert('RESPOSTA CORRETA!!!');
+                cDual.innerHTML = "C";
+                pCPU.innerHTML = "P";
+                uCPU.innerHTML = "U";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta1.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            
+            }
+        } 
+        else if(idPergunta == pergunta2){
+            if (pergunta.toUpperCase() == "ULA") {
+                alert('RESPOSTA CORRETA!!!');
+                uULA.innerHTML = "U";
+                lULA.innerHTML = "L";
+                aULA.innerHTML = "A";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta2.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+    
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+                
+            }
+        }
+        else if(idPergunta == pergunta3){
+            if (pergunta.toUpperCase() == "REGISTRADORES") {
+                
+                alert('RESPOSTA CORRETA!!!');
+                rQuad.innerHTML = "R";
+                eRegistradores.innerHTML = "E";
+                gRegistradores.innerHTML = "G";
+                iRegistradores.innerHTML = "I";
+                sRegistradores.innerHTML = "S";
+                tRegistradores.innerHTML = "T";
+                rRegistradores.innerHTML = "R";
+                aRegistradores.innerHTML = "A";
+                dRegistradores.innerHTML = "D";
+                oRegistradores.innerHTML = "O";
+                r2Registradores.innerHTML = "R";
+                e2Registradores.innerHTML = "E";
+                s2Registradores.innerHTML = "S";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta3.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta4){
+            if (pergunta.toUpperCase() == "RAM") {
+
+                alert('RESPOSTA CORRETA!!!');
+                rDual.innerHTML = "R";
+                aRAM.innerHTML = "A";
+                mRAM.innerHTML = "M";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta4.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta5){
+            if (pergunta.toUpperCase() == "ROM") {
+
+                alert('RESPOSTA CORRETA!!!');
+                rEPROM.innerHTML = "R";
+                oROM.innerHTML = "O";
+                m2MASSA.innerHTML = "M";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta5.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta6){
+        if (pergunta.toUpperCase() == "EPROM") {
+
+                alert('RESPOSTA CORRETA!!!');
+                eEPROM.innerHTML = "E";
+                pEPROM.innerHTML = "P";
+                rEPROM.innerHTML = "R";
+                oEPROM.innerHTML = "O";
+                mEPROM.innerHTML = "M";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta6.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta7){
+            if (pergunta.toUpperCase() == "FLASH") {
+                
+                alert('RESPOSTA CERTA!!!');
+                fFlash.innerHTML = "F";
+                lFlash.innerHTML = "L";
+                aRegistradores.innerHTML = "A";
+                sFlash.innerHTML = "S";
+                hFlash.innerHTML = "H";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta7.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta8){
+            if (pergunta.toUpperCase() == "MEMORIA DE MASSA" || pergunta.toUpperCase() == "MEMÓRIA DE MASSA") {
+                
+                alert('RESPOSTA CERTA!!!');
+                mMASSA.innerHTML = "M";
+                eMASSA.innerHTML = "E";
+                m2MASSA.innerHTML = "M";
+                oMASSA.innerHTML = "Ó";
+                rMASSA.innerHTML = "R";
+                iMASSA.innerHTML = "I";
+                aMASSA.innerHTML = "A";
+                dMASSA.innerHTML = "D";
+                e2MASSA.innerHTML = "E";
+                m3MASSA.innerHTML = "M";
+                a2MASSA.innerHTML = "A";
+                s2Adress.innerHTML = "S";
+                sMASSA.innerHTML = "S";
+                a3MASSA.innerHTML = "A";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta8.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+                
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta9){
+            if (pergunta.toUpperCase() == "DMA") {
+                
+                alert('RESPOSTA CERTA!!!');
+                dDMA.innerHTML = "D";
+                mDMA.innerHTML = "M";
+                aDMA.innerHTML = "A";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta9.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta10){
+            if (pergunta.toUpperCase() == "CS") {
+                
+                alert('RESPOSTA CERTA!!!');
+                cQuad.innerHTML = "C";
+                sCS.innerHTML = "S";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta10.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta11){
+            if (pergunta.toUpperCase() == "ADRESS BUS") {
+                
+                alert('RESPOSTA CERTA!!!');
+                aAdress.innerHTML = "A";
+                dAdress.innerHTML = "D";
+                rAdress.innerHTML = "R";
+                eAdress.innerHTML = "E";
+                s2Registradores.innerHTML = "S";
+                sAdress.innerHTML = "S";
+                bAdress.innerHTML = "B";
+                uAdress.innerHTML = "U";
+                s2Adress.innerHTML = "S";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta11.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta12){
+            if (pergunta.toUpperCase() == "DATA BUS") {
+                
+                alert('RESPOSTA CERTA!!!');
+                dDual.innerHTML = "D";
+                aData.innerHTML = "A";
+                tData.innerHTML = "T";
+                aDMA.innerHTML = "A";
+                bData.innerHTML = "B";
+                uData.innerHTML = "U";
+                sRegistradores.innerHTML = "S";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta12.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta13){
+            if (pergunta.toUpperCase() == "I5") {
+                
+                alert('RESPOSTA CERTA!!!');
+                iRegistradores.innerHTML = "I";
+                i5.innerHTML = "5";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta13.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta14){
+            if (pergunta.toUpperCase() == "I7") {
+                
+                alert('RESPOSTA CERTA!!!');
+                iMASSA.innerHTML = "I";
+                i7.innerHTML = "7";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta14.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta15){
+            if (pergunta.toUpperCase() == "DUAL CORE" || pergunta.toUpperCase() == "DUAL-CORE") {
+                
+                alert('RESPOSTA CERTA!!!');
+                dDual.innerHTML = "D";
+                uDual.innerHTML = "U";
+                aDual.innerHTML = "A";
+                lDual.innerHTML = "L";
+                tracoDual.innerHTML = "-";
+                cDual.innerHTML = "C";
+                oDual.innerHTML = "O";
+                rDual.innerHTML = "R";
+                eDual.innerHTML = "E";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta15.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+        else if(idPergunta == pergunta16){
+            if (pergunta.toUpperCase() == "QUAD CORE" || pergunta.toUpperCase() == "QUAD-CORE") {
+                
+                alert('RESPOSTA CERTA!!!');
+                qQuad.innerHTML = "Q";
+                uULA.innerHTML = "U";
+                aQuad.innerHTML = "A";
+                dQuad.innerHTML = "D";
+                cQuad.innerHTML = "C";
+                oQuad.innerHTML = "O";
+                rQuad.innerHTML = "R";
+                eQuad.innerHTML = "E";
+                idPergunta.disabled = true;
+                idPergunta.style.backgroundColor = "#32CD32";
+                buttonPergunta16.style.display = "none";
+                acertos += 1;
+                funcAcertos();
+            }
+            else {
+                alert('RESPOSTA ERRADA!!!');
+                idPergunta.style.backgroundColor = "red";
+            }
+        }
+    }
+
+    //     jQuery(window).scroll(function () {
+
+    //         if (jQuery(this).scrollTop() > 443) {
+    //         jQuery(".cruzadinha").addClass("fixo");
+    //     }
+    //     else {
+    //     jQuery(".fb-page").removeClass("fixo");
+    //     }
+    // });
+
+        function funcAcertos(){
+            
+            pontos.innerHTML = `ACERTOS: ${acertos}/16`;
+            if(acertos == 16){
+                alert("Parabéns, você gabaritou a cruzadinha!!!")
+            }
+        }
+
+        function funcGabarito(){
+
+            cruzadinha.style.color = "#cccc00"
+
+            cDual.innerHTML = "C";
+            pCPU.innerHTML = "P";
+            uCPU.innerHTML = "U";
+
+            uULA.innerHTML = "U";
+            lULA.innerHTML = "L";
+            aULA.innerHTML = "A";
+
+            rQuad.innerHTML = "R";
+            eRegistradores.innerHTML = "E";
+            gRegistradores.innerHTML = "G";
+            iRegistradores.innerHTML = "I";
+            sRegistradores.innerHTML = "S";
+            tRegistradores.innerHTML = "T";
+            rRegistradores.innerHTML = "R";
+            aRegistradores.innerHTML = "A";
+            dRegistradores.innerHTML = "D";
+            oRegistradores.innerHTML = "O";
+            r2Registradores.innerHTML = "R";
+            e2Registradores.innerHTML = "E";
+            s2Registradores.innerHTML = "S";
+
+            rDual.innerHTML = "R";
+            aRAM.innerHTML = "A";
+            mRAM.innerHTML = "M";
+
+            eEPROM.innerHTML = "E";
+            pEPROM.innerHTML = "P";
+            rEPROM.innerHTML = "R";
+            oEPROM.innerHTML = "O";
+            mEPROM.innerHTML = "M";
+
+            fFlash.innerHTML = "F";
+            lFlash.innerHTML = "L";
+            aRegistradores.innerHTML = "A";
+            sFlash.innerHTML = "S";
+            hFlash.innerHTML = "H";
+
+            mMASSA.innerHTML = "M";
+            eMASSA.innerHTML = "E";
+            m2MASSA.innerHTML = "M";
+            oMASSA.innerHTML = "Ó";
+            rMASSA.innerHTML = "R";
+            iMASSA.innerHTML = "I";
+            aMASSA.innerHTML = "A";
+            dMASSA.innerHTML = "D";
+            e2MASSA.innerHTML = "E";
+            m3MASSA.innerHTML = "M";
+            a2MASSA.innerHTML = "A";
+            s2Adress.innerHTML = "S";
+            sMASSA.innerHTML = "S";
+            a3MASSA.innerHTML = "A";
+
+            dDMA.innerHTML = "D";
+            mDMA.innerHTML = "M";
+            aDMA.innerHTML = "A";
+
+            cQuad.innerHTML = "C";
+            sCS.innerHTML = "S";
+
+            aAdress.innerHTML = "A";
+            dAdress.innerHTML = "D";
+            rAdress.innerHTML = "R";
+            eAdress.innerHTML = "E";
+            s2Registradores.innerHTML = "S";
+            sAdress.innerHTML = "S";
+            bAdress.innerHTML = "B";
+            uAdress.innerHTML = "U";
+            s2Adress.innerHTML = "S";
+
+            dDual.innerHTML = "D";
+            aData.innerHTML = "A";
+            tData.innerHTML = "T";
+            aDMA.innerHTML = "A";
+            bData.innerHTML = "B";
+            uData.innerHTML = "U";
+            sRegistradores.innerHTML = "S";
+
+            iRegistradores.innerHTML = "I";
+            i5.innerHTML = "5";
+
+            iMASSA.innerHTML = "I";
+            i7.innerHTML = "7";
+
+            dDual.innerHTML = "D";
+            uDual.innerHTML = "U";
+            aDual.innerHTML = "A";
+            lDual.innerHTML = "L";
+            tracoDual.innerHTML = "-";
+            cDual.innerHTML = "C";
+            oDual.innerHTML = "O";
+            rDual.innerHTML = "R";
+            eDual.innerHTML = "E";
+
+            qQuad.innerHTML = "Q";
+            uULA.innerHTML = "U";
+            aQuad.innerHTML = "A";
+            dQuad.innerHTML = "D";
+            cQuad.innerHTML = "C";
+            oQuad.innerHTML = "O";
+            rQuad.innerHTML = "R";
+            eQuad.innerHTML = "E";
+
+            pergunta1.value = 'CPU';
+            pergunta2.value = 'ULA';
+            pergunta3.value = 'REGISTRADORES';
+            pergunta4.value = 'RAM';
+            pergunta5.value = 'ROM';
+            pergunta6.value = 'EPROM';
+            pergunta7.value = 'FLASH';
+            pergunta8.value = 'MEMÓRIA DE MASSA';
+            pergunta9.value = 'DMA';
+            pergunta10.value = 'CS';
+            pergunta11.value = 'ADRESS BUS';
+            pergunta12.value = 'DATA BUS';
+            pergunta13.value = 'I5';
+            pergunta14.value = 'I7';
+            pergunta15.value = 'DUAL-CORE';
+            pergunta16.value = 'QUAD-CORE';
+
+            pergunta1.style.backgroundColor = "#ffff00";
+            pergunta2.style.backgroundColor = "#ffff00";
+            pergunta3.style.backgroundColor = "#ffff00";
+            pergunta4.style.backgroundColor = "#ffff00";
+            pergunta5.style.backgroundColor = "#ffff00";
+            pergunta6.style.backgroundColor = "#ffff00";
+            pergunta7.style.backgroundColor = "#ffff00";
+            pergunta8.style.backgroundColor = "#ffff00";
+            pergunta9.style.backgroundColor = "#ffff00";
+            pergunta10.style.backgroundColor = "#ffff00";
+            pergunta11.style.backgroundColor = "#ffff00";
+            pergunta12.style.backgroundColor = "#ffff00";
+            pergunta13.style.backgroundColor = "#ffff00";
+            pergunta14.style.backgroundColor = "#ffff00";
+            pergunta15.style.backgroundColor = "#ffff00";
+            pergunta16.style.backgroundColor = "#ffff00";
+
+            pergunta1.disabled = true;
+            pergunta2.disabled = true;
+            pergunta3.disabled = true;
+            pergunta4.disabled = true;
+            pergunta5.disabled = true;
+            pergunta6.disabled = true;
+            pergunta7.disabled = true;
+            pergunta8.disabled = true;
+            pergunta9.disabled = true;
+            pergunta10.disabled = true;
+            pergunta11.disabled = true;
+            pergunta12.disabled = true;
+            pergunta13.disabled = true;
+            pergunta14.disabled = true;
+            pergunta15.disabled = true;
+            pergunta16.disabled = true;
+
+            buttonPergunta1.style.display = "none";
+            buttonPergunta2.style.display = "none";
+            buttonPergunta3.style.display = "none";
+            buttonPergunta4.style.display = "none";
+            buttonPergunta5.style.display = "none";
+            buttonPergunta6.style.display = "none";
+            buttonPergunta7.style.display = "none";
+            buttonPergunta8.style.display = "none";
+            buttonPergunta9.style.display = "none";
+            buttonPergunta10.style.display = "none";
+            buttonPergunta11.style.display = "none";
+            buttonPergunta12.style.display = "none";
+            buttonPergunta13.style.display = "none";
+            buttonPergunta14.style.display = "none";
+            buttonPergunta15.style.display = "none";
+            buttonPergunta16.style.display = "none";
+        }
+</script>
