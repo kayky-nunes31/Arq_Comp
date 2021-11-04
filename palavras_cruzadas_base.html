@@ -7,7 +7,7 @@
     <link  rel = "icon"  type = "image / png  " size = "32x32"  href = "./favicon-32x32.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
-    <title>Gu Costa, Wesley e João Pedro Crossword</title>
+    <title>Palavras Cruzadas Cristhian e Kayky</title>
 
 </head>
 <body>
@@ -15,7 +15,7 @@
     <style>
         *{
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;            
+            font-family: Arial, Helvetica, sans-serif;            
         }
 
         body{
@@ -24,10 +24,10 @@
 
         h1{
             width: 60%;
-            color: #080808;
+            color: #000080;
             text-align: center;
             margin-top: 45px;
-            margin-left: 45px;
+            margin-left: 110px;
             font-size: 40px;
             float: left;
         }
@@ -36,16 +36,17 @@
             width: 45%;
             display: grid;
             grid-template-columns: repeat(16, 35px);
-            margin-left: 30px;
+            margin-left: 40px;
             margin-top: -10px;
             color: green;
             font-size: 28px;
             text-align: center;
             float: left;
+            margin-top: 0px;
         }
         
         .bloco-util{
-            border: solid 1px #999;
+            border: solid 1px #000000;
             background-color: white;  
         }
 
@@ -72,7 +73,7 @@
             margin-right: 30px;
             width: 48%;
             float: right;
-            background-image: linear-gradient(to bottom right, blue, #eee);
+            background-image: linear-gradient(to bottom right, blueviolet, #eee);
             padding: 25px;
             border-radius: 10px;
             box-shadow: 20px 20px 20px #999;
@@ -86,7 +87,7 @@
             border: solid 1px black;
             border-radius: 7px;
             height: 17px;
-            box-shadow: 1.5px 1.5px 2px blue;
+            box-shadow: 1.5px 1.5px 2px purple;
         }
 
         button{
@@ -105,7 +106,7 @@
         }
 
         button:hover{
-            background-color: #000080;
+            background-color: purple;
             transform: scale(1.05)
         }
 
@@ -153,7 +154,7 @@
 
         .buttons button{
 
-            background-color: #000080;
+            background-color: purple;
             height: 35px;
             margin-right: 15px;
             border-radius: 20px;
@@ -186,10 +187,10 @@
             padding-right: 2px;
             background-color: white;
             text-align: center;
-            border: solid 2px #2568EF;
+            border: solid 2px purple;
             border-radius: 15px;
             font-weight: bold;
-            color: #2568EF;
+            color: purple;
             box-shadow: 2px 2px 2px #777;
         }
 
@@ -199,9 +200,9 @@
 
     <div class="fixoLeft">
 
-        <h1>Cruzadinha by Gustavo Costa,  Wesley Monteiro e João Pedro</h1> 
+        <h1>Cruzadinha feita por Cristhian Mendes e Kayky Nunes</h1> 
 
-        <br> <br>
+        <br> <br> <br> <br>
 
 
         <div class="cruzadinha" id="cruzadinha">
@@ -452,7 +453,7 @@
             <label for="pergunta1"> É a parte de um sistema computacional, que realiza as instruções de um programa de computador, para executar a aritmética básica, lógica, e a entrada e saída de dados.</label>
             <br> <br>
             <input type="text" placeholder="3 letras..." maxlength="3" id="pergunta1">
-            <button id="buttonPergunta1" onclick="funcRespostas(pergunta1);">Conferir</button>
+            <button id="b_pergunta_1" onclick="funcRespostas(pergunta1);">Conferir</button>
         </li>
 
         <br>
@@ -462,7 +463,7 @@
             <label for="pergunta2"> É a unidade responsável pela realização das operações lógicas e aritméticas de um microprocessador.</label>
             <br> <br>
             <input type="text" placeholder="3 letras..." maxlength="3" id="pergunta2">
-            <button id="buttonPergunta2" onclick="funcRespostas(pergunta2);">Conferir</button>
+            <button id="b_pergunta_2" onclick="funcRespostas(pergunta2);">Conferir</button>
         </li>
 
         <br>
@@ -472,7 +473,7 @@
             <label for="pergunta3">É uma memória local rápida do microprocessador, destinada ao armazenamento de dados e instruções.</label>
             <br> <br>
             <input type="text" placeholder="13 letras..." maxlength="13" id="pergunta3">
-            <button id="buttonPergunta3" onclick="funcRespostas(pergunta3);">Conferir</button>
+            <button id="b_pergunta_3" onclick="funcRespostas(pergunta3);">Conferir</button>
         </li>
 
         <br>
@@ -482,7 +483,7 @@
             <label for="pergunta4">É a memória volátil que armazena temporariamente os arquivos com os quais você está trabalhando.</label>
             <br> <br>
             <input type="text" placeholder="3 letras..." maxlength="3" id="pergunta4">
-            <button id="buttonPergunta4" onclick="funcRespostas(pergunta4);">Conferir</button>
+            <button id="b_pergunta_4" onclick="funcRespostas(pergunta4);">Conferir</button>
         </li>
         
         <br>
@@ -492,7 +493,7 @@
             <label for="pergunta5">É uma memória não volátil que armazena permanentemente as instruções no seu computador.</label>
             <br> <br>
             <input type="text" placeholder="3 letras..." maxlength="3" id="pergunta5">
-            <button id="buttonPergunta5" onclick="funcRespostas(pergunta5);">Conferir</button>
+            <button id="b_pergunta_5" onclick="funcRespostas(pergunta5);">Conferir</button>
         </li>
         
         <br>
@@ -502,7 +503,7 @@
             <label for="pergunta6">É um tipo de chip de memória de computador que mantém seus dados quando a energia é desligada. </label>
             <br> <br>
             <input type="text" placeholder="5 letras..." maxlength="5" id="pergunta6">
-            <button id="buttonPergunta6" onclick="funcRespostas(pergunta6);">Conferir</button>
+            <button id="b_pergunta_6" onclick="funcRespostas(pergunta6);">Conferir</button>
         </li>
 
         <br>
@@ -512,7 +513,7 @@
             <label for="pergunta7">É um chip de memória de computador que mantém informações armazenadas sem a necessidade de uma fonte de energia.</label>
             <br> <br>
             <input type="text" placeholder="5 letras..." maxlength="5" id="pergunta7">
-            <button id="buttonPergunta7" onclick="funcRespostas(pergunta7);">Conferir</button>
+            <button id="b_pergunta_7" onclick="funcRespostas(pergunta7);">Conferir</button>
         </li>
         
         <br>
@@ -522,7 +523,7 @@
             <label for="pergunta8">Tem como função armazenar grandes quantidades de informações. (3 palavras...).</label>
             <br> <br>
             <input type="text" placeholder="7 letras, ,2 letras, ,5 letras..." maxlength="16" id="pergunta8">
-            <button id="buttonPergunta8" onclick="funcRespostas(pergunta8);">Conferir</button>
+            <button id="b_pergunta_8" onclick="funcRespostas(pergunta8);">Conferir</button>
         </li>
 
         <br>
@@ -532,7 +533,7 @@
             <label for="pergunta9">Sigla do recurso da placa mãe que capacita os periféricos a terem acesso direto à memória RAM, sem sobrecarregarem o processador. </label>
             <br> <br>
             <input type="text" placeholder="3 letras..." maxlength="3" id="pergunta9">
-            <button id="buttonPergunta9" onclick="funcRespostas(pergunta9);">Conferir</button>
+            <button id="b_pergunta_9" onclick="funcRespostas(pergunta9);">Conferir</button>
         </li>
     
         <br>
@@ -542,7 +543,7 @@
             <label for="pergunta10">Sigla da linha de controle usada para selecionar um dos circuitos integrados entre vários conectados ao mesmo barramento de computador.</label>
             <br> <br>
             <input type="text" placeholder="2 letras..." maxlength="2" id="pergunta10">
-            <button id="buttonPergunta10" onclick="funcRespostas(pergunta10);">Conferir</button>
+            <button id="b_pergunta_10" onclick="funcRespostas(pergunta10);">Conferir</button>
         </li>
         
         <br>
@@ -552,7 +553,7 @@
             <label for="pergunta11"> É a arquitetura de barramento que especifica o endereço de hardware da memória física (o endereço físico). (2 palavras...).</label>
             <br> <br>
             <input type="text" placeholder="6 letras, ,3 letras..." maxlength="10" id="pergunta11">
-            <button id="buttonPergunta11" onclick="funcRespostas(pergunta11);">Conferir</button>
+            <button id="b_Pergunta_11" onclick="funcRespostas(pergunta11);">Conferir</button>
         </li>
         
         <br>
@@ -562,7 +563,7 @@
             <label for="pergunta12">É um sistema dentro de um computador ou dispositivo, consistindo em um conector ou conjunto de fios, que fornece transporte para os dados.</label>
             <br> <br>
             <input type="text" placeholder="4 letras, ,3 letras..." maxlength="8" id="pergunta12">
-            <button id="buttonPergunta12" onclick="funcRespostas(pergunta12);">Conferir</button>
+            <button id="b_pergunta_12" onclick="funcRespostas(pergunta12);">Conferir</button>
         </li>
         
         <br>
@@ -572,7 +573,7 @@
             <label for="pergunta13">Linha de processador da Intel que introduziu o Turbo Boost.</label>
             <br> <br>
             <input type="text" placeholder="2 letras..." maxlength="2" id="pergunta13">
-            <button id="buttonPergunta13" onclick="funcRespostas(pergunta13);">Conferir</button>
+            <button id="b_pergunta_13" onclick="funcRespostas(pergunta13);">Conferir</button>
         </li>
     
         <br>
@@ -582,7 +583,7 @@
             <label for="pergunta14">Linha de processador da Intel de alta performance indicada para multi-tarefas, programas,edições e jogos  pesados.</label>
             <br> <br>
             <input type="text" placeholder="2 letras..." maxlength="2" id="pergunta14">
-            <button id="buttonPergunta14" onclick="funcRespostas(pergunta14);">Conferir</button>
+            <button id="b_pergunta_14" onclick="funcRespostas(pergunta14);">Conferir</button>
         </li>
         
         <br>
@@ -592,7 +593,7 @@
             <label for="pergunta15">Quando se trata de núcleos de processamento, o Intel Pentium Gold G6400 é considerado "____-____". (Palavra composta...).</label>
             <br> <br>
             <input type="text" placeholder="4 letras, - , 4 letras..." maxlength="9" id="pergunta15">
-            <button id="buttonPergunta15" onclick="funcRespostas(pergunta15);">Conferir</button>
+            <button id="b_pergunta_15" onclick="funcRespostas(pergunta15);">Conferir</button>
         </li>
     
         <br>
@@ -602,7 +603,7 @@
             <label for="pergunta16">Quando se trata de núcleos de processamento, o Intel Core i3-10100 é considerado "____-____". (Palavra composta...).</label>
             <br> <br>
             <input type="text" placeholder="4 letras, - , 4 letras..." maxlength="9" id="pergunta16">
-            <button id="buttonPergunta16" onclick="funcRespostas(pergunta16);">Conferir</button> 
+            <button id="b_pergunta_16" onclick="funcRespostas(pergunta16);">Conferir</button> 
         </li>
 
         <br> <br>
@@ -1145,21 +1146,21 @@
             pergunta15.disabled = true;
             pergunta16.disabled = true;
 
-            buttonPergunta1.style.display = "none";
-            buttonPergunta2.style.display = "none";
-            buttonPergunta3.style.display = "none";
-            buttonPergunta4.style.display = "none";
-            buttonPergunta5.style.display = "none";
-            buttonPergunta6.style.display = "none";
-            buttonPergunta7.style.display = "none";
-            buttonPergunta8.style.display = "none";
-            buttonPergunta9.style.display = "none";
-            buttonPergunta10.style.display = "none";
-            buttonPergunta11.style.display = "none";
-            buttonPergunta12.style.display = "none";
-            buttonPergunta13.style.display = "none";
-            buttonPergunta14.style.display = "none";
-            buttonPergunta15.style.display = "none";
-            buttonPergunta16.style.display = "none";
+            b_pergunta_1.style.display = "none";
+            b_pergunta_2.style.display = "none";
+            b_pergunta_3.style.display = "none";
+            b_pergunta_4.style.display = "none";
+            b_pergunta_5.style.display = "none";
+            b_pergunta_6.style.display = "none";
+            b_pergunta_7.style.display = "none";
+            b_pergunta_8.style.display = "none";
+            b_pergunta_9.style.display = "none";
+            b_pergunta_10.style.display = "none";
+            b_pergunta_11.style.display = "none";
+            b_pergunta_12.style.display = "none";
+            b_pergunta_13.style.display = "none";
+            b_pergunta_14.style.display = "none";
+            b_pergunta_15.style.display = "none";
+            b_pergunta_16.style.display = "none";
         }
 </script>
