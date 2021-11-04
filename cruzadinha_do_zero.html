@@ -7,60 +7,282 @@
     <title>Cruzadinha mil grau</title>
     <style>
         body{
-            background-color: #fafafa;
+            background-color: #e3e5e2;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        input{
+        #cruzadinha input{
             height: 40px;
             width: 40px;
             font-size:20px;
             text-align: center;   
         }
-
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        .inicial{
+            height:700px;
+            border-bottom: #fafafa solid 3px;
+            display: flex;
+            justify-content: center;
+        }
+        .inicial .container{
+            height: 100%;
+            width: 80%;
+            align-items: center;
+        }
+        .inicial .box{
+            height: 67%;
+            width: 50%;
+            background-color: #03497a;
+            border: black 2px solid;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fafafa;
+        }
+        #cruzadinha{
+            margin-top: 70px;
+        }
+        .box h1{
+            font-size: 40px;
+        }
+        .box h2{
+            font-size: 30px;
+        }
+        .box img{
+            height: 70px;
+            
+        }
+        .final{
+            margin-top: 50px;
+        }
+        .final h1{
+            padding: 15px;
+            border-radius: 15px;
+            color: #fafafa;
+            background-color: #03497a;
+            text-align: center;
+            border: solid 2px black ;
+            
+        }
+        .final input{
+            border-radius: 10px;
+            border:solid #03497a 2px;
+        }
+        button{
+            background-color: #fafafa;
+            color:#03497a;
+            font-weight: 600;
+            border-radius: 10px;
+            border:#03497a solid 2px;
+        }
     </style>
 </head>
 <body>
+    <div class='inicial'>
+        <div class='container'>
+            <div class='box'>
+                <h1>Cruzadinha</h1>
+                
+                <h2>Arquitetura computacional</h2>
+
+                <img src="http://www.souzaobatera.com.br/wp-content/uploads/2019/09/ICON-SETA-BRANCA-baixo.png" alt="seta para baixo">
+            </div>
+        </div>
+    </div>
+    <div class='container'>
     <div id='cruzadinha'>
-        <input id='r' placeholder="13" style="margin-left: 200px;">
+        <input placeholder="13" style="margin-left: 195px;">
         <br>
-        <input id='d' placeholder="4/11" style='margin-left: 100px;'><input id='u'><input id='a'><input id='l'><input id='c' placeholder="12"><input id='o'><input id='r'><input id='e'>
+        <input placeholder="4/11" style='margin-left: 100px;'><input><input><input><input placeholder="12"><input><input><input>
         <br>
-        <input id='q' placeholder="2"><input id='m' style="margin-left:50px;"><input id='m' style="margin-left: 50px;" ><input id='p' style="margin-left: 50px;">
+        <input placeholder="2"><input style="margin-left:50px;"><input style="margin-left: 50px;" ><input style="margin-left: 50px;">
         <br>
-        <input id='u' placeholder="3" ><input id='l'><input id='a'><input id='u' style="margin-left: 150px;">
+        <input placeholder="3" ><input><input><input style="margin-left: 150px;">
         <br>
-        <input id='a'>
+        <input>
         <br>
-        <input id='d'><input placeholder="10" id='e' style="margin-left: 387px;">
+        <input><input placeholder="10" style="margin-left: 387px;">
         <br>
-        <input id='c' placeholder="8"><input id='s'><input id='p' style="margin-left: 340px;">
+        <input placeholder="8"><input ><input style="margin-left: 340px;">
         <br>
-        <input id='o' ><input id='r' style="margin-left: 387px;" ><input placeholder="5" id='m' style="margin-left: 47px;">
+        <input><input style="margin-left: 387px;" ><input placeholder="5"  style="margin-left: 47px;">
         <br>
-        <input id='r' placeholder="1"><input id='e'><input id='g'><input id='i' placeholder="6"><input id='s'><input id='t'><input id='r' placeholder="9"><input id='a'><input id='d'><input id='o'><input id='r'><input id='e'><input id='s'>
+        <input  placeholder="1"><input><input><input placeholder="6"><input><input><input placeholder="9"><input><input><input><input><input><input>
         <br>
-        <input id='e'><input id='sete' style="margin-left: 97px;"><input id='o' style="margin-left: 97px;"><input id='m' style="margin-left: 97px;"><input id='m' style="margin-left: 47px;">
+        <input><input style="margin-left: 97px;"><input style="margin-left: 97px;"><input style="margin-left: 97px;"><input style="margin-left: 47px;">
         <br>
-        <input id='m' style="margin-left: 290px;"><input id='o' style="margin-left: 191px;">
+        <input style="margin-left: 290px;"><input style="margin-left: 191px;">
         <br>
-        <input id='r' style="margin-left: 530px;">
+        <input style="margin-left: 530px;">
         <br>
-        <input id='i' placeholder="7" style="margin-left: 530px;"><input id='cinco'>
+        <input placeholder="7" style="margin-left: 530px;"><input>
         <br>
-        <input id="a" style="margin-left: 530px;"><input id='d' placeholder="16" style="margin-left:147px">
+        <input style="margin-left: 530px;"><input placeholder="16" style="margin-left:147px">
         <br>
-        <input id="d" style="margin-left: 530px;"><input id='a' style="margin-left:147px">
+        <input style="margin-left: 530px;"><input style="margin-left:147px">
         <br>
-        <input id="e" style="margin-left: 530px;"><input id='t' style="margin-left:147px">
+        <input style="margin-left: 530px;"><input style="margin-left:147px">
         <br>
-        <input id="m" style="margin-left: 530px;"><input id='a' style="margin-left:147px">
+        <input style="margin-left: 530px;"><input style="margin-left:147px">
         <br>
-        <input id='f' placeholder="14" style="margin-left: 432px;" ><input id='l' ><input id='a' ><input id='s' ><input id='h'><input id='b' style="margin-left:52px">
+        <input placeholder="14" style="margin-left: 432px;" ><input ><input><input><input><input style="margin-left:52px">
         <br>
-        <input id="s" style="margin-left: 530px;"><input id='u' style="margin-left:147px">
+        <input style="margin-left: 530px;"><input style="margin-left:147px">
         <br>
-        <input id='a' placeholder="15" style="margin-left: 338px;" ><input id='d'><input id='r'><input id='e'><input id='s'><input id='s'><input id='b'><input id='u'><input id='s'>
+        <input placeholder="15" style="margin-left: 338px;" ><input><input><input><input><input><input><input><input>
         <br>
-        <input id="a" style="margin-left: 530px;">
+        <input style="margin-left: 530px;">
+    </div>
+    </div>
+    <div class='final'>
+        <div class='container'>
+            <div class='dicas'>
+                    <h1>Perguntas</h1>
+                <div class='pergunta'>
+                    
+                    <p>
+                        1) É a memória volátil que armazena temporariamente os arquivos com os quais você está trabalhando
+                        <br>
+                        <input> 
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        2) Quando se trata de núcleos de processamento, o Intel Core i3-10100 é considerado "____-____".
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        3) É a unidade responsável pela realização das operações lógicas e aritméticas de um microprocessador.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        4) Sigla do recurso da placa mãe que capacita os periféricos a terem acesso direto à memória RAM,
+                        <br> sem sobrecarregarem o processador.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        5) Tem como função armazenar grandes quantidades de informações.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        6) Linha de processador da Intel de alta performance indicada para multi-tarefas, programas,edições e
+                        <br> jogos pesados.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        7) Linha de processador da Intel que introduziu o Turbo Boost.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        8) Sigla da linha de controle usada para selecionar um dos circuitos integrados entre vários conectados
+                        <br> ao mesmo barramento de computador.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        9) É uma  memória não volátil que armazena permanentemente as instruções no seu computador.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        10) É um tipo de chip de memória de computador que mantém seus dados quando a energia é desligada.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        11) Quando se trata de núcleos de processamento, o Intel Pentium Gold G6400 é considerado "____-____".
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        12) É a parte de um sistema computacional, que realiza as instruções de um programa de computador,
+                        <br> para executar a aritmética básica, lógica, e a entrada e saída de dados.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        13) É a memória volátil que armazena temporariamente os arquivos com os quais você está trabalhando.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        14) É um chip de memória de computador que mantém informações armazenadas sem a necessidade
+                        <br> de uma fonte de energia.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        15) É a arquitetura de barramento que especifica o endereço de hardware da memória física.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                    <p>
+                        16) É um sistema dentro de um computador ou dispositivo, consistindo em um conector ou conjunto de fios,
+                        <br> que fornece transporte para os dados.
+                        <br>
+                        <input>
+                        <button>
+                            Conferir
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
