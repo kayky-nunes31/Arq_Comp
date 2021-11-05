@@ -73,6 +73,7 @@
         .final input{
             border-radius: 10px;
             border:solid #03497a 2px;
+            text-align: center;
         }
         button{
             background-color: #fafafa;
@@ -149,24 +150,24 @@
                     <p>
                         1) É a memória volátil que armazena temporariamente os arquivos com os quais você está trabalhando
                         <br>
-                        <input> 
-                        <button>
+                        <input id='um'> 
+                        <button onclick='val1()'>
                             Conferir
                         </button>
                     </p>
                     <p>
                         2) Quando se trata de núcleos de processamento, o Intel Core i3-10100 é considerado "____-____".
                         <br>
-                        <input>
-                        <button>
+                        <input id='dois'>
+                        <button onclick='val2()'>
                             Conferir
                         </button>
                     </p>
                     <p>
                         3) É a unidade responsável pela realização das operações lógicas e aritméticas de um microprocessador.
                         <br>
-                        <input>
-                        <button>
+                        <input id='tres'>
+                        <button onclick='val3()'>
                             Conferir
                         </button>
                     </p>
@@ -174,16 +175,16 @@
                         4) Sigla do recurso da placa mãe que capacita os periféricos a terem acesso direto à memória RAM,
                         <br> sem sobrecarregarem o processador.
                         <br>
-                        <input>
-                        <button>
+                        <input id='quatro'>
+                        <button onclick='val4()'>
                             Conferir
                         </button>
                     </p>
                     <p>
                         5) Tem como função armazenar grandes quantidades de informações.
                         <br>
-                        <input>
-                        <button>
+                        <input id='cinco'>
+                        <button onclick='val5()'>
                             Conferir
                         </button>
                     </p>
@@ -191,16 +192,16 @@
                         6) Linha de processador da Intel de alta performance indicada para multi-tarefas, programas,edições e
                         <br> jogos pesados.
                         <br>
-                        <input>
-                        <button>
+                        <input id='seis'>
+                        <button onclick='val6()'>
                             Conferir
                         </button>
                     </p>
                     <p>
                         7) Linha de processador da Intel que introduziu o Turbo Boost.
                         <br>
-                        <input>
-                        <button>
+                        <input id='sete'>
+                        <button onclick='val7()'>
                             Conferir
                         </button>
                     </p>
@@ -208,32 +209,32 @@
                         8) Sigla da linha de controle usada para selecionar um dos circuitos integrados entre vários conectados
                         <br> ao mesmo barramento de computador.
                         <br>
-                        <input>
-                        <button>
+                        <input id='oito'>
+                        <button onclick='val8()'>
                             Conferir
                         </button>
                     </p>
                     <p>
                         9) É uma  memória não volátil que armazena permanentemente as instruções no seu computador.
                         <br>
-                        <input>
-                        <button>
+                        <input id='nove'>
+                        <button onclick='val9()'>
                             Conferir
                         </button>
                     </p>
                     <p>
                         10) É um tipo de chip de memória de computador que mantém seus dados quando a energia é desligada.
                         <br>
-                        <input>
-                        <button>
+                        <input id='dez'>
+                        <button onclick='val10()'>
                             Conferir
                         </button>
                     </p>
                     <p>
                         11) Quando se trata de núcleos de processamento, o Intel Pentium Gold G6400 é considerado "____-____".
                         <br>
-                        <input>
-                        <button>
+                        <input id='onze'>
+                        <button onclick='val11()'>
                             Conferir
                         </button>
                     </p>
@@ -241,16 +242,16 @@
                         12) É a parte de um sistema computacional, que realiza as instruções de um programa de computador,
                         <br> para executar a aritmética básica, lógica, e a entrada e saída de dados.
                         <br>
-                        <input>
-                        <button>
+                        <input id='doze'>
+                        <button onclick='val12()'>
                             Conferir
                         </button>
                     </p>
                     <p>
                         13) É a memória volátil que armazena temporariamente os arquivos com os quais você está trabalhando.
                         <br>
-                        <input>
-                        <button>
+                        <input id='treze'>
+                        <button onclick='val13()'>
                             Conferir
                         </button>
                     </p>
@@ -258,16 +259,16 @@
                         14) É um chip de memória de computador que mantém informações armazenadas sem a necessidade
                         <br> de uma fonte de energia.
                         <br>
-                        <input>
-                        <button>
+                        <input id='quatorze'>
+                        <button onclick='val14()'>
                             Conferir
                         </button>
                     </p>
                     <p>
                         15) É a arquitetura de barramento que especifica o endereço de hardware da memória física.
                         <br>
-                        <input>
-                        <button>
+                        <input id='quinze'>
+                        <button onclick='val15()'>
                             Conferir
                         </button>
                     </p>
@@ -275,8 +276,8 @@
                         16) É um sistema dentro de um computador ou dispositivo, consistindo em um conector ou conjunto de fios,
                         <br> que fornece transporte para os dados.
                         <br>
-                        <input>
-                        <button>
+                        <input id='dezesseis'>
+                        <button onclick='val16()'>
                             Conferir
                         </button>
                     </p>
@@ -286,3 +287,155 @@
     </div>
 </body>
 </html>
+<script>
+    function val1(){
+        var word = (um.value).toLowerCase()
+        if(word == 'registradores'){
+            alert('RESPOSTA CORRETA');
+            um.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    
+    function val2(){
+        var word = (dois.value).toLowerCase()
+        if(word == 'quad core'){
+            alert('RESPOSTA CORRETA');
+            dois.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val3(){
+        var word = (tres.value).toLowerCase()
+        if(word == 'ula'){
+            alert('RESPOSTA CORRETA');
+            tres.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val4(){
+        var word = (quatro.value).toLowerCase()
+        if(word == 'dma'){
+            alert('RESPOSTA CORRETA');
+            quatro.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val5(){
+        var word = (cinco.value).toLowerCase()
+        if(word == 'memoria de massa'){
+            alert('RESPOSTA CORRETA');
+            cinco.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val6(){
+        var word = (seis.value).toLowerCase()
+        if(word == 'i7'){
+            alert('RESPOSTA CORRETA');
+            seis.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val7(){
+        var word = (sete.value).toLowerCase()
+        if(word == 'i5'){
+            alert('RESPOSTA CORRETA');
+            sete.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val8(){
+        var word = (oito.value).toLowerCase()
+        if(word == 'cs'){
+            alert('RESPOSTA CORRETA');
+            oito.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val9(){
+        var word = (nove.value).toLowerCase()
+        if(word == 'rom'){
+            alert('RESPOSTA CORRETA');
+            nove.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val10(){
+        var word = (dez.value).toLowerCase()
+        if(word == 'eprom'){
+            alert('RESPOSTA CORRETA');
+            dez.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val11(){
+        var word = (onze.value).toLowerCase()
+        if(word == 'dual core'){
+            alert('RESPOSTA CORRETA');
+            onze.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val12(){
+        var word = (doze.value).toLowerCase()
+        if(word == 'cpu'){
+            alert('RESPOSTA CORRETA');
+            doze.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val13(){
+        var word = (treze.value).toLowerCase()
+        if(word == 'ram'){
+            alert('RESPOSTA CORRETA');
+            treze.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val14(){
+        var word = (quatorze.value).toLowerCase()
+        if(word == 'flash'){
+            alert('RESPOSTA CORRETA');
+            quatorze.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val15(){
+        var word = (quinze.value).toLowerCase()
+        if(word == 'adress bus'){
+            alert('RESPOSTA CORRETA');
+            quinze.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+    function val16(){
+        var word = (dezesseis.value).toLowerCase()
+        if(word == 'data bus'){
+            alert('RESPOSTA CORRETA');
+            dezesseis.style.backgroundColor = '#229a00';
+        } else {
+            alert('RESPOSTA INCORRETA')
+        }
+    } 
+
+
+
+
+
+</script>
