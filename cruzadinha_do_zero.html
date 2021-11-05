@@ -116,13 +116,13 @@
         <br>
         <input placeholder="1" onkeyup="cruzadas_r3()" id="input_r3"><input onkeyup="cruzadas_e4()" id="input_e4"><input onkeyup="cruzadas_g()" id="input_g"><input placeholder="6" onkeyup="cruzadas_i()" id="input_i"><input onkeyup="cruzadas_ss()" id="input_ss"><input onkeyup="cruzadas_t()" id="input_t"><input placeholder="9" onkeyup="cruzadas_r5()" id="input_r5"><input onkeyup="cruzadas_a4()" id="input_a4"><input onkeyup="cruzadas_d3()" id="input_d3"><input onkeyup="cruzadas_o3()" id="input_o3"><input onkeyup="cruzadas_r6()" id="input_r6"><input onkeyup="cruzadas_e5()" id="input_e5"><input onkeyup="cruzadas_s2()" id="input_s2">
         <br>
-        <input onkeyup="cruzadas_s3()" id="input_s3" ><input style="margin-left: 97px;" placeholder="6"><input style="margin-left: 97px;" placeholder="9"><input style="margin-left: 97px;"><input style="margin-left: 47px;" placeholder="5">
+        <input onkeyup="cruzadas_e3()" id="input_e3" ><input style="margin-left: 97px;" onkeyup="cruzadas_i7()" id="input_i7"><input style="margin-left: 97px;" onkeyup="cruzadas_o4()" id="input_04"><input style="margin-left: 97px;" onkeyup="cruzadas_m4()" id="input_m4"><input style="margin-left: 47px;" placeholder="5">
         <br>
-        <input style="margin-left: 290px;" placeholder="9"><input style="margin-left: 191px;" placeholder="5">
+        <input style="margin-left: 290px;" onkeyup="cruzadas_m3()" id="input_m3"><input style="margin-left: 191px;" placeholder="5">
         <br>
-        <input style="margin-left: 530px;">
+        <input style="margin-left: 530px;" placeholder="5">
         <br>
-        <input placeholder="7" style="margin-left: 530px;"><input>
+        <input placeholder="7" style="margin-left: 530px;" onkeyup="cruzadas_i3()" id="input_i3"><input onkeyup="cruzadas_i5()" id="input_i5">
         <br>
         <input style="margin-left: 530px;"><input placeholder="16" style="margin-left:147px">
         <br>
@@ -136,7 +136,7 @@
         <br>
         <input style="margin-left: 530px;"><input style="margin-left:147px">
         <br>
-        <input placeholder="15" style="margin-left: 338px;" ><input placeholder="15"><input placeholder="15"><input onkeyup="cruzadas_e3()" id="input_e3"><input><input><input><input><input>
+        <input placeholder="15" style="margin-left: 338px;" ><input placeholder="15"><input placeholder="15"><input onkeyup="cruzadas_e6()" id="input_e6"><input  onkeyup="cruzadas_s3()" id="input_s3"><input onkeyup="cruzadas_s4()" id="input_s4"><input placeholder="15"><input placeholder="15"><input placeholder="15">
         <br>
         <input style="margin-left: 530px;">
     </div>
@@ -535,6 +535,28 @@
             input_mm.style.backgroundColor = "red";
         }
     }
+    function cruzadas_m3() {
+        var m3 = input_m3.value;
+
+        if(m3 == 'm' || m3 == 'M') {
+            alert('RESPOSTA CORRETA');
+            input_m3.style.backgroundColor = "green";
+        } else {
+            alert('RESPOSTA INCORRETA');
+            input_m3.style.backgroundColor = "red";
+        }
+    }
+    function cruzadas_m4() {
+        var m4 = input_m4.value;
+
+        if(m4 == 'm' || m4 == 'M') {
+            alert('RESPOSTA CORRETA');
+            input_m4.style.backgroundColor = "green";
+        } else {
+            alert('RESPOSTA INCORRETA');
+            input_m4.style.backgroundColor = "red";
+        }
+    }
     function cruzadas_e() {
         var e = input_e.value;
 
@@ -590,6 +612,17 @@
             input_e5.style.backgroundColor = "red";
         }
     }
+    function cruzadas_e6() {
+        var e6 = input_e6.value;
+
+        if(e6 == 'e' || e6 == 'E') {
+            alert('RESPOSTA CORRETA');
+            input_e6.style.backgroundColor = "green";
+        } else {
+            alert('RESPOSTA INCORRETA');
+            input_e6.style.backgroundColor = "red";
+        }
+    }
     function cruzadas_o() {
         var o = input_o.value;
 
@@ -621,6 +654,17 @@
         } else {
             alert('RESPOSTA INCORRETA');
             input_o3.style.backgroundColor = "red";
+        }
+    }
+    function cruzadas_o4() {
+        var o4 = input_o3.value;
+
+        if(o4 == 'o' || o4 == 'O') {
+            alert('RESPOSTA CORRETA');
+            input_o4.style.backgroundColor = "green";
+        } else {
+            alert('RESPOSTA INCORRETA');
+            input_o4.style.backgroundColor = "red";
         }
     }
     function cruzadas_r() {
@@ -698,6 +742,17 @@
         } else {
             alert('RESPOSTA INCORRETA');
             input_i.style.backgroundColor = "red";
+        }
+    }
+    function cruzadas_i3() {
+        var i3 = input_i3.value;
+
+        if(i3 == 'i' || i3 == 'I') {
+            alert('RESPOSTA CORRETA');
+            input_i3.style.backgroundColor = "green";
+        } else {
+            alert('RESPOSTA INCORRETA');
+            input_i3.style.backgroundColor = "red";
         }
     }
     function cruzadas_a() {
@@ -819,6 +874,17 @@
         } else {
             alert('RESPOSTA INCORRETA');
             input_s3.style.backgroundColor = "red";
+        }
+    }
+    function cruzadas_s4() {
+        var s4 = input_s4.value;
+
+        if(s4 == 's' || s4 == 'S') {
+            alert('RESPOSTA CORRETA');
+            input_s4.style.backgroundColor = "green";
+        } else {
+            alert('RESPOSTA INCORRETA');
+            input_s4.style.backgroundColor = "red";
         }
     }
     function cruzadas_t() {
